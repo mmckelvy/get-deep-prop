@@ -1,4 +1,4 @@
-# set-deep-prop
+# get-deep-prop
 Gets the value for a deeply nested objects and arrays.
 
 ## Example
