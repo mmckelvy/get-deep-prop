@@ -1,17 +1,17 @@
 {
-  "name": "set-deep-prop",
+  "name": "get-deep-prop",
   "version": "1.0.0",
-  "description": "Set the value of a deeply nested object or array",
-  "main": "set-deep-prop.js",
+  "description": "Get the value of a deeply nested object or array",
+  "main": "get-deep-prop.js",
   "scripts": {
-    "test": "tape test/set-deep-prop.test.js"
+    "test": "tape test/get-deep-prop.test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:mmckelvy/set-deep-prop.git"
+    "url": "git@github.com:mmckelvy/get-deep-prop.git"
   },
   "keywords": [
-    "set object",
+    "get object",
     "nested",
     "deep"
   ],

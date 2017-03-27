@@ -12,12 +12,9 @@ module.exports = function setDeepProp(obj, path, value) {
   let current = obj
 
   // Get to the proper key
-  for (let i = 0; i < path.length - 1; i++) {
+  for (let i = 0; i < path.length; i++) {
     current = current[path[i]]
   }
 
-  // Set the proper key
-  current[path[path.length - 1]] = value
-
-  return obj
+  return current
 }

@@ -1,8 +1,8 @@
 const test = require('tape')
 
-const setDeepProp = require('../set-deep-prop')
+const getDeepProp = require('../get-deep-prop')
 
-test('setDeepProp', function(t) {
+test('getDeepProp', function(t) {
   const obj = {
     order: {
       number: 243,
@@ -44,18 +44,17 @@ test('setDeepProp', function(t) {
     }
   }
 
-  setDeepProp(obj, ['order', 'customer', 'name'], 'Bill Johnson')
 
   t.equal(
-    obj.order.customer.name,
-    'Bill Johnson',
-    'Should set a deeply nested object'
+    getDeepProp(obj, ['order', 'customer', 'name']),
+    'John Smith',
+    'Should get a deeply nested object'
   )
 
   t.end()
 })
 
-test('setDeepProp', function(t) {
+test('getDeepProp', function(t) {
   const obj = {
     order: {
       number: 243,
@@ -97,18 +96,17 @@ test('setDeepProp', function(t) {
     }
   }
 
-  setDeepProp(obj, ['order', 'items', 0, 'fruit'], 'pear')
 
   t.equal(
-    obj.order.items[0].fruit,
-    'pear',
+    getDeepProp(obj, ['order', 'items', 0, 'fruit']),
+    'apple',
     'Should work with objects nested in arrays'
   )
 
   t.end()
 })
 
-test('setDeepProp', function(t) {
+test('getDeepProp', function(t) {
   const obj = {
     order: {
       number: 243,
@@ -150,18 +148,17 @@ test('setDeepProp', function(t) {
     }
   }
 
-  setDeepProp(obj, ['order', 'items', 1, 'regions', 1, 'state'], 'Alabama')
 
   t.equal(
-    obj.order.items[1].regions[1].state,
-    'Alabama',
+    getDeepProp(obj, ['order', 'items', 1, 'regions', 1, 'state']),
+    'Oregon',
     'Should work for objects nested in arrays'
   )
 
   t.end()
 })
 
-test('setDeepProp', function(t) {
+test('getDeepProp', function(t) {
   const obj = {
     order: {
       number: 243,
@@ -178,11 +175,10 @@ test('setDeepProp', function(t) {
     }
   }
 
-  setDeepProp(obj, ['order', 'items', 1], 'orange')
 
   t.equal(
-    obj.order.items[1],
-    'orange',
+    getDeepProp(obj, ['order', 'items', 1]),
+    'pear',
     'Should work for array props'
   )
 
